@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F1EEE4;
+  color: #100C24;
+  text-align: center;
+  padding: 2rem;
+}
+
+header {
+  background-color: #1D2955;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.features {
+  margin: 2rem 0;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 1.2rem;
+  text-align: left;
+  display: inline-block;
+}
+
+button {
+  background-color: #1D2955;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #100C24;
+}
+
+footer {
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}

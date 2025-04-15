@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+*.enc
+*.dec
+*.log
+key_vault.json
+key_vault_backup.*
+myfile.txt*
