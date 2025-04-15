@@ -11,6 +11,20 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from rich.console import Console
 from rich.prompt import Prompt
 from rich.panel import Panel
+from fraud_detection import load_sample_data, train_model, detect_fraud
+
+def run_ai_fraud_module():
+    print("\n[*] Running Deep Trace AI Fraud Detection...\n")
+    data = load_sample_data()
+    model = train_model(data)
+    results = detect_fraud(model, data)
+
+    for index, row in results.iterrows():
+        status = "!! FRAUD DETECTED !!" if row['result'] == -1 else "Clean"
+        print(f"Record {index + 1}: {status} | Login Attempts: {row['login_attempts']} | "
+              f"File Accesses: {row['file_access_count']} | Suspicious Keywords: {row['suspicious_keywords']}")
+    
+    print("\n[*] AI Analysis complete.\n")
 
 console = Console()
 
@@ -171,6 +185,17 @@ def main():
         elif choice == "6":
             console.print("🔒 Exiting CyberGuard...", style="cyan")
             break
+
+def main():
+    print("=== Deep Trace CyberGuard ===")
+    print("1. Run AI Fraud Detection")
+    print("2. Other Tools...")
+    choice = input("Select an option: ")
+
+    if choice == '1':
+        run_ai_fraud_module()
+    else:
+        print("Coming soon...")
 
 if __name__ == "__main__":
     main()
